@@ -1,0 +1,23 @@
+.data
+.text
+
+# a) 324 NOR 100
+li $t0, 324    # $t0 = 324
+li $t1, 100    # $t1 = 100
+
+# Realize a operação NOR para a)
+nor $t2, $t0, $t1  # $t2 = $t0 NOR $t1
+
+# b) 2018 NOR 1970
+li $t3, 2018   # $t3 = 2018
+li $t4, 1970   # $t4 = 1970
+
+# Realize a operação NOR para b)
+nor $t5, $t3, $t4  # $t5 = $t3 NOR $t4
+
+# c) 33 NOR 66
+li $t6, 33    # $t6 = 33
+li $t7, 66    # $t7 = 66
+
+# Realize a operação NOR para c)
+nor $s0, $t6, $t7  # $s0 = $t6 NOR $t7
