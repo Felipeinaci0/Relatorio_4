@@ -1,0 +1,147 @@
+1) .data
+.text
+
+li $t0, 20    # A = 20
+li $t1, 40    # B = 50
+li $t2, 0    # C = 70
+
+    # Comparação: if (a == b)
+beq $t0, $t1, igual  # Se 'a' for igual a 'b', vá para igual
+# Caso contrário, vá para diferente
+j diferente
+
+igual:
+    # c = a + b
+    add $t2, $t0, $t1  # $t2 = $t0 + $t1
+
+    # a = b - c
+    sub $t0, $t1, $t2  # $t0 = $t1 - $t2
+
+    # Fim do bloco if-else
+    j fim
+
+diferente:
+    # b = a + c
+    add $t1, $t0, $t2  # $t1 = $t0 + $t2
+
+    # c = b - c
+    sub $t2, $t1, $t2  # $t2 = $t1 - $t2
+ 
+ fim:
+
+2) .data
+.text
+
+li $t0, 20    # A = 20
+li $t1, 40    # B = 20 
+li $t2, 0     # C = 0
+
+# Comparação: if (a != b)
+bne $t0, $t1, diferente  # Se 'a' for diferente de 'b', vá para diferente
+# Caso contrário, vá para igual
+j igual
+
+diferente:
+    # c = a + b
+    add $t2, $t0, $t1  # $t2 = $t0 + $t1
+
+    # a = b - c
+    sub $t0, $t1, $t2  # $t0 = $t1 - $t2
+
+    # Fim do bloco if-else
+    j fim
+
+igual:
+    # b = a + c
+    add $t1, $t0, $t2  # $t1 = $t0 + $t2
+
+    # c = b - c
+    sub $t2, $t1, $t2  # $t2 = $t1 - $t2
+
+fim:
+
+3) .data
+.text
+
+li $t0, 20     # A = 20
+li $t1, 10     # B = 10
+li $t2, 0     # C = 0
+
+# Comparação: if (a > b)
+bgt $t0, $t1, maior  # Se 'a' for maior que 'b', vá para maior
+# Caso contrário, vá para menor
+j menor
+
+maior:
+    # c = a - b
+    sub $t2, $t0, $t1  # $t2 = $t0 - $t1
+
+    # a = b + c
+    add $t0, $t1, $t2  # $t0 = $t1 + $t2
+
+    # Fim do bloco if-else
+    j fim
+
+menor:
+    # b = a + c
+    sub $t1, $t0, $t2  # $t1 = $t0 - $t2
+
+    # c = b - c
+    add $t2, $t1, $t2  # $t2 = $t1 + $t2
+
+fim:
+
+
+4) .data
+.text
+
+li $t0, 10     # A = 10
+li $t1, 20    # B = 20
+li $t2, 0     # C = 0
+
+# Comparação: if (a < b)
+blt $t0, $t1, menor  # Se 'a' for menor que 'b', vá para menor
+# Caso contrário, vá para maior
+j maior
+
+menor:
+    # c = a + b
+    add $t2, $t0, $t1  # $t2 = $t0 + $t1
+
+    # a = b - c
+    sub $t0, $t1, $t2  # $t0 = $t1 - $t2
+
+    # Fim do bloco if-else
+    j fim
+
+maior:
+    # b = a + c
+    add $t1, $t0, $t2  # $t1 = $t0 + $t2
+
+    # c = b - c
+    sub $t2, $t1, $t2  # $t2 = $t1 - $t2
+
+fim:
+
+
+5) .data
+.text
+
+li $t0, 10    # i = 10
+li $t1, 0     # cont = 0
+
+loop:
+    # Verifique se i > 0
+    blez $t0, fim
+    
+    # cont += 5
+    addi $t1, $t1, 5   # $t1 = $t1 + 5
+    
+    # i -= 2
+    addi $t0, $t0, -2  # $t0 = $t0 - 2
+    
+    # Loop de repetição
+    j loop
+    
+fim:
+
