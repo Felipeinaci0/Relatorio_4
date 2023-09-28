@@ -1,0 +1,20 @@
+.data
+.text
+
+# Carregue os números em registradores
+li $t0, 10     # $t0 = 10
+li $t1, 25     # $t1 = 25
+li $t2, 43     # $t2 = 43
+li $t3, 89     # $t3 = 89
+
+# Deslocamento à direita em 8 bits
+srl $t4, $t0, 8  # $t4 = $t0 >> 8
+srl $t5, $t1, 8  # $t5 = $t1 >> 8
+srl $t6, $t2, 8  # $t6 = $t2 >> 8
+srl $t7, $t3, 8  # $t7 = $t3 >> 8
+
+# Deslocamento à esquerda em 4 bits
+sll $s0, $t0, 4  # $t8 = $t0 << 4
+sll $s1, $t1, 4  # $t9 = $t1 << 4
+sll $s2, $t2, 4 # $t10 = $t2 << 4
+sll $s3, $t3, 4 # $t11 = $t3 << 4
