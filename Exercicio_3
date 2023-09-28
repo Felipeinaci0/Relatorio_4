@@ -1,0 +1,23 @@
+.data
+.text
+
+# a) 324 OR 100
+li $t0, 324    # $t0 = 324
+li $t1, 100    # $t1 = 100
+
+# Realiza a operação OR para a)
+or $t2, $t0, $t1  # $t2 = $t0 OR $t1
+
+# b) 2018 OR 1970
+li $t3, 2018   # $t3 = 2018
+li $t4, 1970   # $t4 = 1970
+
+# Realiza a operação OR para b)
+or $t5, $t3, $t4  # $t5 = $t3 OR $t4
+
+# c) 33 OR 66
+li $t6, 33    # $t6 = 33
+li $t7, 66    # $t7 = 66
+
+# Realiza a operação OR para c)
+or $s0, $t6, $t7  # $s0 = $t6 OR $t7
